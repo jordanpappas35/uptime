@@ -1,0 +1,23 @@
+{
+  "name": "uptime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && npm run copy-files && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-files": "rm -rf ./dist/public && cp -R ./src/public ./dist/public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "14.6.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -4,8 +4,14 @@ const uptime: () => Promise<string> = () => {
     return new Promise((resolve, reject) => {
         let stderr = undefined
         let stdout = ""
-        const uptime = spawn('uptime')
+        let uptime = null
 
+        if (process.platform === 'darwin') {
+            uptime = spawn('uptime')
+        } else {
+            uptime = spawn('uptime', ['-s'])
+        }
+        
         uptime.stderr.on('data', data => {
             stderr += data
         })

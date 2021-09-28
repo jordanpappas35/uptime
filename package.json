@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc && npm run copy-files",
     "start": "tsc && npm run copy-files && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-files": "rm -rf ./dist/public && cp -R ./src/public ./dist/public"
